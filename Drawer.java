@@ -49,7 +49,11 @@ public class Drawer{
 		    
 		    while ((line = br.readLine()) != null) {
 		       for(Character c : line.toCharArray()){		    	   
-		    	   x = Character.getNumericValue(c);		    	   
+		    	   x = Character.getNumericValue(c);
+		    	   
+		    	   if(x < 0 || x > 9)
+		    		   x = 10;
+		    	   
 		    	   piDigits.add(x);
 		       }
 		    }
@@ -65,15 +69,15 @@ public class Drawer{
 	
 	private static void createImage(List<Integer> piDigits, List<Color> scheme){
 		
-		int imageWidth = 800;
-		int imageHeight = 800;
+		int imageWidth = 1000;
+		int imageHeight = 1000;
 		
 		BufferedImage img = new BufferedImage(imageWidth, imageHeight, BufferedImage.TYPE_INT_ARGB);
 		Graphics2D graph = img.createGraphics();
 		
 		int count = 0;
-		int hei = 0;
-		int wid = 0;
+		int hei = 10;
+		int wid = 10;
 		int size = 10;
 		
 		graph.setColor(Color.BLACK);
@@ -85,7 +89,7 @@ public class Drawer{
 		    	
 		    	int digit = piDigits.get(count);
 		    	
-		    	if(digit < 0 || digit > 10)
+		    	if(digit < 0 || digit > 9)
 		    		digit = 10;
 		    	
 		    	Color color = scheme.get(digit);		    	
@@ -93,11 +97,10 @@ public class Drawer{
 		    	graph.fillOval(wid - size, hei - size, size, size); 
 	    	
 		    	wid += 10;
-		    	
 		    	++count;	  		    	
 		    }
 		    
-	    	wid = 0;
+	    	wid = 10;
 	    	hei += 10;	
 		}
 		
