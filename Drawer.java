@@ -62,13 +62,13 @@ public class Drawer{
 				
 				count++;
 				
-				if(arg.equals("-dimension"))
+				if(arg.toUpperCase().equals("-dimension"))
 					dimPos = count + 1;
 				
-				if(arg.equals("-fileout"))
+				if(arg.toUpperCase().equals("-fileout"))
 					outPos = count + 1;
 				
-				if(arg.equals("-filein"))
+				if(arg.toUpperCase().equals("-filein"))
 					inPos = count + 1;
 				
 				if(outPos == count){
