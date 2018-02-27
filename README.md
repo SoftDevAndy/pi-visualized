@@ -1,4 +1,4 @@
-# pi-visualized
+# pidigits
 
 <img src="https://puu.sh/yf2Fv/c12c542815.png" width="300px" height="300px">
 
